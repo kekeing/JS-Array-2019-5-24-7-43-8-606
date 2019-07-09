@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<p id = "demo"></p>
+<script>
+var a = [1, 2, 3, 4, 5];
+
+var test;
+for(i=0;i<a.length;i++){
+	a[i] *= 2;
+
+}
+document.getElementById("demo").innerHTML = a;
+</script>
+</body>
+</html>
