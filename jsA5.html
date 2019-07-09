@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<p id = "demo"></p>
+<script>
+
+var a = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+function findMost(arr) {
+    if (!arr.length) return;
+    if (arr.length === 1) return 1;
+    var res = {};
+    // 遍历数组
+    for (var i = 0, l = arr.length; i < l; i++) {
+        if (!res[arr[i]]) {
+            res[arr[i]] = 1;
+        } else {
+            res[arr[i]]++;
+        }
+    }
+    // 遍历 res
+    var keys = Object.keys(res);
+    var maxNum = 0, maxEle;
+    for (var i = 0, l = keys.length; i < l; i++) {
+        if (res[keys[i]] > maxNum) {
+            maxNum = res[keys[i]];
+            maxEle = keys[i];
+        }
+    }
+    return '出现次数最多的元素为:' + maxEle + ', 出现次数为:' + maxNum;
+}
+var b = findMost(a);
+document.getElementById("demo").innerHTML = b;
+
+</script>
+</body>
